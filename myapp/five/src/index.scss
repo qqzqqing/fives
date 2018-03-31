@@ -1,0 +1,114 @@
+@import "./lib/reset.scss";
+
+#root,
+.App,
+body,
+html {
+    @include rect(100%, 100%);
+}
+
+.App {
+    @include flexbox();
+    @include flex-direction(column);
+    .container {
+        @include flex();
+        @include rect(100%, auto);
+        @include overflow(hidden);
+
+        .box {
+            @include rect(100%, 100%);
+            @include flexbox();
+            @include flex-direction(column);
+            header {
+                 @include rect(100%, auto);
+                  @include flexbox();
+                  .am-carousel{
+                      @include flexbox();
+                         @include flex(); 
+                  }
+                .search {
+                    position: absolute;
+                    
+                    top: 0;
+                    @include rect(100%, 44px);
+                    background-image: url("img/111.png");
+                    background-size: 100% 44px;
+                    background-repeat: no-repeat;
+                    //                  display: flex;
+                    //                  -webkit-box-pack: start;
+                    //                  justify-content: flex-start;
+                    //                  -webkit-box-align: center;
+                    //                  align-items: center;
+                    .home-search {
+                        @include rect(80%, 30px);
+                        margin-top: 10px;
+                        //-webkit-box-flex: 1;   
+                        //flex: 1;
+                        background: #fff;
+                        background-color: hsla(0,0%,100%,.25);
+                        border-radius: 4px;
+                        margin-left: 17px;
+                        margin-right: 16px;
+                        border: 0;
+                        color: #fff;
+                        font-size: 14px;
+                        //  display: flex;
+                        //  -webkit-box-pack: start;  
+                        //  justify-content: flex-start;
+                        //  -webkit-box-align: center;  
+                        //  align-items: center;
+                    }
+                    .icon-iconset0316{
+                       font-size: 24px;
+                       color: #fff;
+                    }
+                }
+
+            }
+            .content {
+                @include flex();
+                @include rect(100%, auto);
+                @include overflow();
+                .am-list-item .am-input-extra {
+                    max-height: 30px;
+                    overflow: auto;
+                }
+                .am-button-ghost::before {
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    footer {
+        @include rect(100%, 0.5rem);
+        @include background-color(#eee);
+
+        ul {
+            @include rect(100%, 100%);
+            @include flexbox();
+            li {
+                @include flex();
+                @include rect(auto, 100%);
+                a {
+                    @include text-color(#333);
+                    @include rect(100%, 100%);
+                    @include flexbox();
+                    @include flex-direction(column);
+                    @include justify-content();
+                    @include align-items();
+                    span {
+                        @include font-size(0.22rem);
+                    }
+                    p {
+                        @include font-size(0.12rem);
+                    }
+
+                    &.active {
+                        @include text-color(#f66);
+                    }
+                }
+            }
+        }
+    }
+}
